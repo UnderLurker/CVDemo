@@ -1,0 +1,13 @@
+CUR_DIR=$(pwd)
+BUILD=${CUR_DIR}/build
+if [ ! -d "${BUILD}" ]; then
+  mkdir build
+fi
+
+cd ${BUILD}
+
+cmake ..
+make $1
+RUN_CMD="./$1"
+${RUN_CMD}
+cd ..
